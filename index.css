@@ -1,0 +1,71 @@
+
+.mainContainer {
+    background-color: rgb(181, 216, 233);
+    margin: auto;
+    width: 25%;
+    border-radius: 15px;
+    border-style: solid;
+    border-color: white;
+    padding: 10px;
+    margin-top: 5%;
+    border: 1px white;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+
+.topContainer {
+    min-width: max-content;
+    color: white;
+}
+
+.title{
+    display: inline-block;
+    vertical-align: middle;
+}
+
+.header {
+    width: 100%;
+    height: fit-content;
+    float: right;
+    border-radius: 15px;
+    background-color: rgb(25, 119, 156);
+}
+
+.board{
+    height: 400px;
+    width: 100%;
+    border-collapse: separate;
+}
+table td {
+    margin: auto;
+}
+
+td {
+    background-color: rgba(38, 152, 197, 0.425);
+    border-radius: 15px;
+    width: 40px;
+    height: 40px;
+    text-align: center;
+    font-size: 50px;
+    color: aliceblue;
+    line-height: 0%;
+}
+
+td:hover{
+  background-color: rgb(155, 216, 211);  
+  cursor: pointer;
+}
+
+.footer {
+    width: 100%;
+    margin-top: 10px;
+    color: whitesmoke;
+}
+
+.btn {
+    margin-top: inherit;
+}
+
+p{
+    margin-top: 20px !important;
+}
