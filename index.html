@@ -14,8 +14,8 @@
                         <h1 class="text-center font-weight-bold">TIC TAC TOE</h1>
                     </div>
                     <div class="secHeader">
-                            <h3 class="text-center">Current turn: <span id="current"></span> </p> 
-                        </div>
+                            <h3 id="status" class="text-center">Current turn: <span id="current"></span> </p> 
+                    </div>
                     <div class="nowPlaying">
                 </div>
             </div>
@@ -39,8 +39,9 @@
                 </table> 
             </div>
             <div class="footer">
-                    <button type="button" class="btn btn-secondary btn-lg btn-block" name="reset" onclick=ClearBoard()>Reset</button>
-                    <span class="credit"><p class="text-center">Created by Oz Avraham </p></span>
+                    <h3 id="result" class="text-center"></h3>
+                    <button type="button" class="btn btn-secondary btn-lg btn-block" name="reset" onclick=clearBoard()>Reset</button>
+                    <span class="credit"><p class="text-center">Created by Oz Avraham</p></span>
             </div>
         </div>
         <script src="app.js"> </script>
