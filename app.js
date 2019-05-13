@@ -1,6 +1,7 @@
 var Game = {
     currentPlayer: 'X',
-    counter: 0
+    counter: 0, 
+    gameOver: false
 }
 
 Innitialize();
@@ -22,6 +23,7 @@ function clearBoard() {
     document.getElementById('9').innerHTML = '';
     document.getElementById('result').innerHTML = '';
     this.Game.counter = 0;
+    this.Game.gameOver = false;
 }
 
 // Add all optional winning scenarios 
@@ -59,24 +61,31 @@ function checkWin () {
         SwitchPlay(); // Switch back to the last one who played
         let winner = this.Game.currentPlayer;
         document.getElementById("result").innerHTML = "Winner is " + winner + "!";;
+        this.Game.gameOver = true;
     }
     if (counter==9 && !gameOver) {
         let winnerId = document.getElementById("result");
         winnerId.innerHTML = ("Its a tie!");
+        this.Game.gameOver = true;
     }
 }
 
 // Mark X / O 
 function markSpot(clickedId) {
-    var currentTD = document.getElementById(clickedId);
-    if (currentTD.innerHTML != "") { // Cell already taken!
-        window.alert("Cell already taken!");
+    if (!this.Game.gameOver) { 
+        var currentTD = document.getElementById(clickedId);
+        if (currentTD.innerHTML != "") { // Cell already taken!
+            window.alert("Cell already taken!");
+        }
+        else { 
+            let currentPlayer = Game.currentPlayer;
+            currentTD.innerHTML = currentPlayer;
+            SwitchPlay();
+            checkWin(); // Sending to check if there is a winner
+        }
     }
-    else { 
-        let currentPlayer = Game.currentPlayer;
-        currentTD.innerHTML = currentPlayer;
-        SwitchPlay();
-        checkWin(); // Sending to check if there is a winner
+    else {
+        window.alert("Reset board to continue.");
     }
 }
 
